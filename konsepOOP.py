@@ -60,7 +60,7 @@ class KelolaBuku(DatabaseManager):
 class User(DatabaseManager):
     def __init__(self, db_file, username, password):
         super().__init__(db_file)
-        self.username = username
+        self.__username = username
         self.__password = password
     
          
@@ -82,4 +82,13 @@ class User(DatabaseManager):
         else:
             return "404"
         
+class penjagaperpustakaan(DatabaseManager):
+    def __init__(self, db_file, nama):
+        super().__init__(db_file)
+        self.nama = nama
+    
+    def tambah_data(self):
+        query = f"INSERT INTO penjagaperpustakaan VALUES ('{self.nama}')"
+        self.execute_query(query)
+    
        
