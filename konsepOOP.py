@@ -62,7 +62,8 @@ class User(DatabaseManager):
         super().__init__(db_file)
         self.__username = username
         self.__password = password
-    
+    # ini termasuk dari konsep encapsulation karena dia bersifat privat karena username dan password merupakan data yang privat, encapsulation juga berguna untuk mengamakan data 
+    # dan jika kodenya di gunakan dalam kelas lain tidak akan berfungsi#
          
 
     def tambah_data(self):
